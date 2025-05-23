@@ -7,6 +7,7 @@
 *****************************************************************************/
 
 #include "../../mywidget.h"
+#include <QtNetwork/QSslError>
 #include <QtCore/qmetatype.h>
 
 #include <QtCore/qtmochelpers.h>
@@ -44,9 +45,15 @@ template <> constexpr inline auto MyWidget::qt_create_metaobjectdata<qt_meta_tag
         "automode_send_value",
         "singleshot_send_value",
         "read_server_message",
+        "read_server_message_loopback",
+        "wait_for_connection",
         "change_transport_protocol",
         "protocol_text",
-        "display_connection_state"
+        "loopback_button_statechanged",
+        "network_connectivity_check",
+        "QNetworkReply*",
+        "reply",
+        "http_connection_timeout"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -58,12 +65,22 @@ template <> constexpr inline auto MyWidget::qt_create_metaobjectdata<qt_meta_tag
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'read_server_message'
         QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'read_server_message_loopback'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'wait_for_connection'
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'change_transport_protocol'
-        QtMocHelpers::SlotData<void(const QString &)>(6, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { QMetaType::QString, 7 },
+        QtMocHelpers::SlotData<void(const QString &)>(8, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::QString, 9 },
         }}),
-        // Slot 'display_connection_state'
-        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'loopback_button_statechanged'
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'network_connectivity_check'
+        QtMocHelpers::SlotData<void(QNetworkReply *)>(11, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { 0x80000000 | 12, 13 },
+        }}),
+        // Slot 'http_connection_timeout'
+        QtMocHelpers::SlotData<void()>(14, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -91,9 +108,25 @@ void MyWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
         case 1: _t->automode_send_value(); break;
         case 2: _t->singleshot_send_value(); break;
         case 3: _t->read_server_message(); break;
-        case 4: _t->change_transport_protocol((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
-        case 5: _t->display_connection_state(); break;
+        case 4: _t->read_server_message_loopback(); break;
+        case 5: _t->wait_for_connection(); break;
+        case 6: _t->change_transport_protocol((*reinterpret_cast< std::add_pointer_t<QString>>(_a[1]))); break;
+        case 7: _t->loopback_button_statechanged(); break;
+        case 8: _t->network_connectivity_check((*reinterpret_cast< std::add_pointer_t<QNetworkReply*>>(_a[1]))); break;
+        case 9: _t->http_connection_timeout(); break;
         default: ;
+        }
+    }
+    if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
+        switch (_id) {
+        default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+        case 8:
+            switch (*reinterpret_cast<int*>(_a[1])) {
+            default: *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType(); break;
+            case 0:
+                *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType::fromType< QNetworkReply* >(); break;
+            }
+            break;
         }
     }
 }
@@ -117,14 +150,14 @@ int MyWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 10;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
-            *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        if (_id < 10)
+            qt_static_metacall(this, _c, _id, _a);
+        _id -= 10;
     }
     return _id;
 }

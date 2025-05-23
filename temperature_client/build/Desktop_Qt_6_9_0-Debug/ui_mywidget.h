@@ -25,6 +25,7 @@ public:
     QPushButton *automode_button;
     QComboBox *comboBox;
     QLabel *label;
+    QPushButton *loopback_button;
 
     void setupUi(QWidget *MyWidget)
     {
@@ -47,6 +48,9 @@ public:
         label = new QLabel(MyWidget);
         label->setObjectName("label");
         label->setGeometry(QRect(140, 202, 66, 18));
+        loopback_button = new QPushButton(MyWidget);
+        loopback_button->setObjectName("loopback_button");
+        loopback_button->setGeometry(QRect(230, 400, 93, 28));
 
         retranslateUi(MyWidget);
 
@@ -63,6 +67,7 @@ public:
 
         comboBox->setPlaceholderText(QString());
         label->setText(QCoreApplication::translate("MyWidget", "\345\217\221\351\200\201\346\250\241\345\274\217", nullptr));
+        loopback_button->setText(QCoreApplication::translate("MyWidget", "\345\205\263\351\227\255\347\216\257\345\233\236\346\265\213\350\257\225", nullptr));
     } // retranslateUi
 
 };

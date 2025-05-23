@@ -1050,12 +1050,20 @@ moc_mywidget.cpp: ../../mywidget.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qtnetworkexports.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qabstractsocket.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qhostaddress.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QTcpSocket \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QTcpServer \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qtcpserver.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QNetworkInterface \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qnetworkinterface.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QFile \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qfile.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qfiledevice.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QDateTime \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qdatetime.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qcalendar.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QRegularExpression \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qregularexpression.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtMultimedia/QSoundEffect \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtMultimedia/qsoundeffect.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtMultimedia/qtmultimediaglobal.h \
@@ -1291,12 +1299,20 @@ main.o: ../../main.cpp ../../mywidget.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qtnetworkexports.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qabstractsocket.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qhostaddress.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QTcpSocket \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QTcpServer \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qtcpserver.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QNetworkInterface \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qnetworkinterface.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QFile \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qfile.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qfiledevice.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QDateTime \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qdatetime.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qcalendar.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QRegularExpression \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qregularexpression.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtMultimedia/QSoundEffect \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtMultimedia/qsoundeffect.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtMultimedia/qtmultimediaglobal.h \
@@ -1511,12 +1527,20 @@ mywidget.o: ../../mywidget.cpp ../../mywidget.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qtnetworkexports.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qabstractsocket.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qhostaddress.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QTcpSocket \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QTcpServer \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qtcpserver.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QNetworkInterface \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qnetworkinterface.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QFile \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qfile.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qfiledevice.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QDateTime \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qdatetime.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qcalendar.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QRegularExpression \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qregularexpression.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtMultimedia/QSoundEffect \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtMultimedia/qsoundeffect.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtMultimedia/qtmultimediaglobal.h \

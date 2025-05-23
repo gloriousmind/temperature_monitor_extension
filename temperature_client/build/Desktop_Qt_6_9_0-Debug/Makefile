@@ -272,6 +272,7 @@ DIST          = /home/jie/Qt/6.9.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/jie/Qt/6.9.0/gcc_64/mkspecs/features/qt_config.prf \
 		/home/jie/Qt/6.9.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/jie/Qt/6.9.0/gcc_64/mkspecs/features/spec_post.prf \
+		../../.qmake.stash \
 		/home/jie/Qt/6.9.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/jie/Qt/6.9.0/gcc_64/mkspecs/features/toolchain.prf \
 		/home/jie/Qt/6.9.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -521,6 +522,7 @@ Makefile: ../../temperature_client.pro /home/jie/Qt/6.9.0/gcc_64/mkspecs/linux-g
 		/home/jie/Qt/6.9.0/gcc_64/mkspecs/features/qt_config.prf \
 		/home/jie/Qt/6.9.0/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/home/jie/Qt/6.9.0/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/home/jie/Qt/6.9.0/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/home/jie/Qt/6.9.0/gcc_64/mkspecs/features/toolchain.prf \
 		/home/jie/Qt/6.9.0/gcc_64/mkspecs/features/default_pre.prf \
@@ -763,6 +765,7 @@ Makefile: ../../temperature_client.pro /home/jie/Qt/6.9.0/gcc_64/mkspecs/linux-g
 /home/jie/Qt/6.9.0/gcc_64/mkspecs/features/qt_config.prf:
 /home/jie/Qt/6.9.0/gcc_64/mkspecs/linux-g++/qmake.conf:
 /home/jie/Qt/6.9.0/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /home/jie/Qt/6.9.0/gcc_64/mkspecs/features/exclusive_builds.prf:
 /home/jie/Qt/6.9.0/gcc_64/mkspecs/features/toolchain.prf:
 /home/jie/Qt/6.9.0/gcc_64/mkspecs/features/default_pre.prf:
@@ -1049,6 +1052,38 @@ moc_mywidget.cpp: ../../mywidget.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qtnetworkexports.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qabstractsocket.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qhostaddress.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QTcpSocket \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/QMessageBox \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qmessagebox.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qdialog.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QNetworkRequest \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qhttpheaders.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QSharedDataPointer \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QString \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QUrl \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QVariant \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/q26numeric.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QNetworkAccessManager \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QSslConfiguration \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qsslsocket.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qsslerror.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qdatetime.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qcalendar.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qssl.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QFlags \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QMetaType \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QNetworkReply \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qnetworkreply.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QIODevice \
 		moc_predefs.h \
 		/home/jie/Qt/6.9.0/gcc_64/libexec/moc
 	/home/jie/Qt/6.9.0/gcc_64/libexec/moc $(DEFINES) --include /home/jie/Qt_Project/temperature_monitor/temperature_client/build/Desktop_Qt_6_9_0-Debug/moc_predefs.h -I/home/jie/Qt/6.9.0/gcc_64/mkspecs/linux-g++ -I/home/jie/Qt_Project/temperature_monitor/temperature_client -I/home/jie/Qt/6.9.0/gcc_64/include -I/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets -I/home/jie/Qt/6.9.0/gcc_64/include/QtGui -I/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork -I/home/jie/Qt/6.9.0/gcc_64/include/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../mywidget.h -o moc_mywidget.cpp
@@ -1282,6 +1317,38 @@ main.o: ../../main.cpp ../../mywidget.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qtnetworkexports.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qabstractsocket.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qhostaddress.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QTcpSocket \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/QMessageBox \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qmessagebox.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qdialog.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QNetworkRequest \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qhttpheaders.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QSharedDataPointer \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QString \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QUrl \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QVariant \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/q26numeric.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QNetworkAccessManager \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QSslConfiguration \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qsslsocket.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qsslerror.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qdatetime.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qcalendar.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qssl.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QFlags \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QMetaType \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QNetworkReply \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qnetworkreply.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QIODevice \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/QApplication \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../main.cpp
@@ -1494,7 +1561,63 @@ mywidget.o: ../../mywidget.cpp ../../mywidget.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qtnetworkexports.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qabstractsocket.h \
 		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qhostaddress.h \
-		ui_mywidget.h
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QTcpSocket \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qtcpsocket.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/QMessageBox \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qmessagebox.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qdialog.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qdialogbuttonbox.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QNetworkRequest \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qnetworkrequest.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qhttpheaders.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QSharedDataPointer \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QString \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QUrl \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QVariant \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/q26numeric.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QNetworkAccessManager \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qnetworkaccessmanager.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QSslConfiguration \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qsslconfiguration.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qsslsocket.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qsslerror.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qsslcertificate.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qcryptographichash.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qdatetime.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qcalendar.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qssl.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QFlags \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QSslPreSharedKeyAuthenticator \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qsslpresharedkeyauthenticator.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QMetaType \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/QNetworkReply \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtNetwork/qnetworkreply.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/QIODevice \
+		ui_mywidget.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/QApplication \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qapplication.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/QComboBox \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qcombobox.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qstyleoption.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtGui/qvalidator.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qregularexpression.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qslider.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qabstractslider.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qstyle.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qtabbar.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qtabwidget.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qrubberband.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qframe.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtCore/qabstractitemmodel.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/QLabel \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qlabel.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtGui/qpicture.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtGui/qtextdocument.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/QPushButton \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qpushbutton.h \
+		/home/jie/Qt/6.9.0/gcc_64/include/QtWidgets/qabstractbutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mywidget.o ../../mywidget.cpp
 
 moc_mywidget.o: moc_mywidget.cpp 

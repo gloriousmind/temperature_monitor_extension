@@ -41,17 +41,23 @@ template <> constexpr inline auto MyWidget::qt_create_metaobjectdata<qt_meta_tag
         "MyWidget",
         "read_udp_message",
         "",
+        "read_udp_message_loopback",
         "read_tcp_message",
-        "get_tcpsocket"
+        "get_tcpsocket",
+        "get_tcpsocket_loopback"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Slot 'read_udp_message'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'read_tcp_message'
+        // Slot 'read_udp_message_loopback'
         QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'get_tcpsocket'
+        // Slot 'read_tcp_message'
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'get_tcpsocket'
+        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'get_tcpsocket_loopback'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -76,8 +82,10 @@ void MyWidget::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, vo
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->read_udp_message(); break;
-        case 1: _t->read_tcp_message(); break;
-        case 2: _t->get_tcpsocket(); break;
+        case 1: _t->read_udp_message_loopback(); break;
+        case 2: _t->read_tcp_message(); break;
+        case 3: _t->get_tcpsocket(); break;
+        case 4: _t->get_tcpsocket_loopback(); break;
         default: ;
         }
     }
@@ -103,14 +111,14 @@ int MyWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 5;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 5;
     }
     return _id;
 }
