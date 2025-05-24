@@ -152,7 +152,7 @@ void MyWidget::read_server_message_loopback()
             tcp_socket_loopback->connectToHost(server_address, tcp_port_number_loopback);
             ui->automode_button->setEnabled(false);
             ui->singleshot_button->setEnabled(false);
-            connect(tcp_socket_loopback, &QTcpSocket::connected, this, &MyWidget::wait_for_connection);//Qt::UniqueConnection);
+            connect(tcp_socket_loopback, &QTcpSocket::connected, this, &MyWidget::wait_for_connection, Qt::UniqueConnection);
         }
     }
 }
