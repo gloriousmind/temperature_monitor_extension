@@ -199,12 +199,7 @@ void MyWidget::network_connectivity_check(QNetworkReply *reply)
         ui->loopback_button->setText("打开环回测试");
         loopback_activated = false;
         udp_socket_loopback->writeDatagram(QByteArray("关闭环回测试"), QHostAddress::LocalHost, udp_client_loopback_port);
-        QByteArray sending_message("服务器地址");
-        if (loopback_activated)
-            udp_socket_loopback->writeDatagram(sending_message, QHostAddress::LocalHost, udp_client_loopback_port);
-        else
-            udp_socket->writeDatagram(sending_message, QHostAddress::Broadcast, udp_port_number);
-        sending_mode_udp = false;
+        change_transport_protocol(ui->comboBox->currentText());
     }
     else
         QMessageBox::information(this, "网络信息", "网络未连接，关闭环回测试失败!");
