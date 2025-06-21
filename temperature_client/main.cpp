@@ -1,6 +1,7 @@
 #include "mywidget.h"
 
 #include <QApplication>
+#include <QSerialPortInfo>
 
 int main(int argc, char *argv[])
 {

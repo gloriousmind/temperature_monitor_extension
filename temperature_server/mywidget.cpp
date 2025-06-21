@@ -65,7 +65,7 @@ void MyWidget::read_udp_message()
                 QString error_value = QString::fromUtf8(value) + "℃";
                 qDebug() << "error temperature data" << " " << error_value << "℃";
                 setStyleSheet("background : green");
-                effect->play();
+                //effect->play();
                 QFile logfile("mylog.txt");
                 if (!logfile.open(QIODeviceBase::WriteOnly | QIODeviceBase::Append))
                     return;
@@ -115,7 +115,7 @@ void MyWidget::read_udp_message_loopback()
                 QString error_value = QString::fromUtf8(value) + "℃";
                 qDebug() << "error temperature data" << " " << error_value << "℃";
                 setStyleSheet("background : green");
-                effect->play();
+                //effect->play();
                 QFile logfile("mylog.txt");
                 if (!logfile.open(QIODeviceBase::WriteOnly | QIODeviceBase::Append))
                     return;
@@ -163,7 +163,7 @@ void MyWidget::read_tcp_message()
             QString error_value = QString::fromUtf8(value) + "℃";
             qDebug() << "error temperature data" << " " << error_value << "℃";
             setStyleSheet("background : green");
-            effect->play();
+            //effect->play();
             QFile logfile("mylog.txt");
             if (!logfile.open(QIODeviceBase::WriteOnly | QIODeviceBase::Append))
                 return;

@@ -10,6 +10,8 @@
 #include <QNetworkRequest>
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
+#include <QSerialPort>
+#include <QBuffer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -27,6 +29,7 @@ public:
 
 private:
     Ui::MyWidget *ui;
+    //网络通信
     QTimer *timer_sending_data;
     QTimer *reply_timeout;
     bool sending_mode_udp = true;
@@ -45,9 +48,13 @@ private:
     QNetworkReply *reply;
     static QRegularExpression address_pattern;
     bool loopback_activated = true;
-
+    //串口通信
+    QSerialPort *serial_port;
+    QStringList existing_serial_port;
+    QByteArray received_serialPort_data;
 
 private slots:
+    //网络通信
     void automode_start();
     void automode_send_value();
     void singleshot_send_value();
@@ -58,5 +65,15 @@ private slots:
     void loopback_button_statechanged();
     void network_connectivity_check(QNetworkReply *reply);
     void http_connection_timeout();
+    //串口通信
+    void update_serial_port();
+    void store_serialPort_data();
+    double extract_serialPort_data();
+    void SerialPort_box_textchanged(QString text);
+    void BaudRate_box_textchange(QString text);
+    void DataBits_box_textchange(QString text);
+    void FlowControl_box_textchange(QString text);
+    void Parity_box_textchange(QString text);
+    void StopBits_box_textchange(QString text);
 };
 #endif // MYWIDGET_H

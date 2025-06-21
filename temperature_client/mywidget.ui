@@ -13,86 +13,375 @@
   <property name="windowTitle">
    <string>MyWidget</string>
   </property>
-  <widget class="QPushButton" name="singleshot_button">
+  <widget class="QTabWidget" name="tabWidget">
    <property name="geometry">
     <rect>
-     <x>430</x>
-     <y>400</y>
-     <width>93</width>
-     <height>28</height>
+     <x>-10</x>
+     <y>0</y>
+     <width>601</width>
+     <height>491</height>
     </rect>
    </property>
-   <property name="text">
-    <string>PushButton</string>
+   <property name="currentIndex">
+    <number>0</number>
    </property>
-  </widget>
-  <widget class="QPushButton" name="automode_button">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>400</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>PushButton</string>
-   </property>
-  </widget>
-  <widget class="QComboBox" name="comboBox">
-   <property name="geometry">
-    <rect>
-     <x>210</x>
-     <y>200</y>
-     <width>101</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="acceptDrops">
-    <bool>false</bool>
-   </property>
-   <property name="sizeAdjustPolicy">
-    <enum>QComboBox::SizeAdjustPolicy::AdjustToContentsOnFirstShow</enum>
-   </property>
-   <property name="placeholderText">
-    <string/>
-   </property>
-   <item>
-    <property name="text">
-     <string>Udp</string>
-    </property>
-   </item>
-   <item>
-    <property name="text">
-     <string>Tcp</string>
-    </property>
-   </item>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>140</x>
-     <y>202</y>
-     <width>66</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>发送模式</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="loopback_button">
-   <property name="geometry">
-    <rect>
-     <x>230</x>
-     <y>400</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>关闭环回测试</string>
-   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>串口通信</string>
+    </attribute>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>40</y>
+       <width>85</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Serial Port</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="SerialPort_box">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>40</y>
+       <width>140</width>
+       <height>26</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_5">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>80</y>
+       <width>85</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Baud Rate</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>160</y>
+       <width>85</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Flow Control</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>200</y>
+       <width>85</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Parity</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>240</y>
+       <width>85</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>StopBits</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="BaudRate_box">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>80</y>
+       <width>140</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>1200</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2400</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>4800</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>9600</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>19200</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>38400</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>57600</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>115200</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="FlowControl_box">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>160</y>
+       <width>140</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>No FlowControl</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Hardware FlowControl</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Software FlowControl</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="Parity_box">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>200</y>
+       <width>140</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>No Parity</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Even Parity</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Odd Parity</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Space Parity</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Mark Parity</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QComboBox" name="StopBits_box">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>240</y>
+       <width>140</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>OneStop</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>OneAndHalfStop</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>TwoStop</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>120</y>
+       <width>85</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>DataBits</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="DataBits_box">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>120</y>
+       <width>140</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>5</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>6</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>7</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>8</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QPushButton" name="update_serialPort_button">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>40</y>
+       <width>140</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>更新串口信息</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>网络通信</string>
+    </attribute>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>150</y>
+       <width>66</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>发送模式</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="loopback_button">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>270</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>关闭环回测试</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="singleshot_button">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>270</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>单词发送</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="automode_button">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>270</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>自动发送</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>150</y>
+       <width>101</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="sizeAdjustPolicy">
+      <enum>QComboBox::SizeAdjustPolicy::AdjustToContentsOnFirstShow</enum>
+     </property>
+     <property name="placeholderText">
+      <string/>
+     </property>
+     <item>
+      <property name="text">
+       <string>Udp</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Tcp</string>
+      </property>
+     </item>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <resources/>

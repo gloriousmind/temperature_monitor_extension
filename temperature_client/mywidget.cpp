@@ -1,13 +1,54 @@
 #include "mywidget.h"
 #include "ui_mywidget.h"
+#include <QSerialPortInfo>
+#include <QList>
+#include <QSerialPort>
+#include <QFileDialog>
+#include <QProcess>
 
 QRegularExpression MyWidget::address_pattern;
+
+QMap<QString, QSerialPort::BaudRate> baudRateMap = {
+    {"9600", QSerialPort::Baud9600},
+    {"19200", QSerialPort::Baud19200},
+    {"38400", QSerialPort::Baud38400},
+    {"57600", QSerialPort::Baud57600},
+    {"115200", QSerialPort::Baud115200}
+};
+
+QMap<QString, QSerialPort::DataBits> dataBitsMap = {
+    {"5", QSerialPort::Data5},
+    {"6", QSerialPort::Data6},
+    {"7", QSerialPort::Data7},
+    {"8", QSerialPort::Data8}
+};
+
+QMap<QString, QSerialPort::FlowControl> flowControlMap = {
+    {"No FlowControl", QSerialPort::NoFlowControl},
+    {"Hardware FlowControl", QSerialPort::HardwareControl},
+    {"Software FlowControl", QSerialPort::SoftwareControl}
+};
+
+QMap<QString, QSerialPort::Parity> parityMap = {
+    {"No Partiy", QSerialPort::NoParity},
+    {"Even Parity", QSerialPort::EvenParity},
+    {"Odd Parity", QSerialPort::OddParity},
+    {"Mark Parity", QSerialPort::MarkParity},
+    {"Space Parity", QSerialPort::SpaceParity}
+};
+
+QMap<QString, QSerialPort::StopBits> stopBitsMap = {
+    {"OneStop", QSerialPort::OneStop},
+    {"OneAndHalfStop", QSerialPort::OneAndHalfStop},
+    {"TwoStop", QSerialPort::TwoStop}
+};
 
 MyWidget::MyWidget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::MyWidget)
 {
     ui->setupUi(this);
+    //网络通信界面
     QMessageBox::information(this, "环回测试信息", "环回测试默认开启");
     ui->automode_button->setText("自动发送");
     ui->singleshot_button->setText("单次发送");
@@ -26,7 +67,27 @@ MyWidget::MyWidget(QWidget *parent)
     connect(udp_socket_loopback, &QUdpSocket::readyRead, this, &MyWidget::read_server_message_loopback);
     connect(ui->comboBox, &QComboBox::currentTextChanged, this, &MyWidget::change_transport_protocol);
     connect(ui->loopback_button, &QPushButton::clicked, this, &MyWidget::loopback_button_statechanged);
-
+    //串口通信界面
+    ui->SerialPort_box->setEnabled(false);
+    ui->BaudRate_box->setEnabled(false);
+    ui->BaudRate_box->setCurrentText("9600");
+    ui->DataBits_box->setEnabled(false);
+    ui->DataBits_box->setCurrentText("8");
+    ui->FlowControl_box->setEnabled(false);
+    ui->FlowControl_box->setCurrentText("No FlowControl");
+    ui->Parity_box->setEnabled(false);
+    ui->Parity_box->setCurrentText("No Parity");
+    ui->StopBits_box->setEnabled(false);
+    ui->StopBits_box->setCurrentText("OneStop");
+    serial_port = new QSerialPort(this);
+    serial_port->setBaudRate(baudRateMap[ui->BaudRate_box->currentText()]);
+    serial_port->setDataBits(dataBitsMap[ui->DataBits_box->currentText()]);
+    serial_port->setFlowControl(flowControlMap[ui->FlowControl_box->currentText()]);
+    serial_port->setParity(parityMap[ui->Parity_box->currentText()]);
+    serial_port->setStopBits(stopBitsMap[ui->StopBits_box->currentText()]);
+    connect(ui->update_serialPort_button, &QPushButton::clicked, this, &MyWidget::update_serial_port);
+    connect(serial_port, &QIODevice::readyRead, this, &MyWidget::store_serialPort_data);
+    connect(ui->SerialPort_box, &QComboBox::currentTextChanged, this, &MyWidget::SerialPort_box_textchanged);
 }
 
 void MyWidget::automode_start()
@@ -45,7 +106,7 @@ void MyWidget::automode_start()
 
 void MyWidget::automode_send_value()
 {
-    double temperature_value = -50 + QRandomGenerator::global()->generateDouble() * 500;
+    double temperature_value = extract_serialPort_data();
     if (sending_mode_udp)
     {
         if (loopback_activated)
@@ -70,7 +131,7 @@ void MyWidget::singleshot_send_value()
 {
     timer_sending_data->stop();
     ui->automode_button->setText("自动发送");
-    double temperature_value = -50 + QRandomGenerator::global()->generateDouble() * 500;
+    double temperature_value = extract_serialPort_data();
     if (sending_mode_udp)
     {
         if (loopback_activated)
@@ -94,6 +155,7 @@ void MyWidget::singleshot_send_value()
 void MyWidget::change_transport_protocol(const QString &protocol_text)
 {
     timer_sending_data->stop();
+    ui->automode_button->setText("自动发送");
     if (protocol_text == "Udp")
     {
         sending_mode_udp = true;
@@ -184,6 +246,7 @@ void MyWidget::loopback_button_statechanged()
         ui->loopback_button->setText("关闭环回测试");
         loopback_activated = true;
         udp_socket_loopback->writeDatagram(QByteArray("打开环回测试"), QHostAddress::LocalHost, udp_client_loopback_port);
+        emit ui->comboBox->currentTextChanged(ui->comboBox->currentText());
         ui->automode_button->setEnabled(true);
         ui->singleshot_button->setEnabled(true);
         ui->comboBox->setEnabled(true);
@@ -217,6 +280,84 @@ void MyWidget::http_connection_timeout()
     ui->singleshot_button->setEnabled(true);
     ui->comboBox->setEnabled(true);
 }
+
+void MyWidget::update_serial_port()
+{
+    ui->SerialPort_box->blockSignals(true);
+    ui->SerialPort_box->clear();
+    QDir path = QString("/dev/pts");
+    existing_serial_port = path.entryList(QDir::System| QDir::NoDotAndDotDot);
+    for (const QString &file : existing_serial_port)
+    {
+        ui->SerialPort_box->addItem(file);;
+    }
+    ui->SerialPort_box->setEnabled(true);
+    ui->BaudRate_box->setEnabled(true);
+    ui->DataBits_box->setEnabled(true);
+    ui->FlowControl_box->setEnabled(true);
+    ui->Parity_box->setEnabled(true);
+    ui->StopBits_box->setEnabled(true);
+    ui->SerialPort_box->blockSignals(false);
+}
+
+void MyWidget::store_serialPort_data()
+{
+    received_serialPort_data += serial_port->readAll();
+    if (received_serialPort_data.size() > 1024) {
+        received_serialPort_data.clear(); // 清空防止无限增大
+    }
+
+}
+
+double MyWidget::extract_serialPort_data()
+{
+    double temperature = -200;
+    if (received_serialPort_data.contains('\n'))
+    {
+        int pos = received_serialPort_data.indexOf('\n');
+        temperature = received_serialPort_data.first(pos).toDouble();
+        received_serialPort_data = received_serialPort_data.sliced(pos + 1);
+    }
+    return temperature;
+}
+
+void MyWidget::SerialPort_box_textchanged(QString text)
+{
+    serial_port->close();
+    QString path = QString("/dev/pts/%1").arg(text);
+    serial_port->setPortName(path);
+    if (serial_port->open(QIODevice::ReadWrite)) {
+        qDebug() << "串口打开成功:" << serial_port->portName();
+    } else {
+        qDebug() << "串口打开失败:" << serial_port->errorString();
+    }
+}
+
+void MyWidget::BaudRate_box_textchange(QString text)
+{
+    serial_port->setBaudRate(baudRateMap[text]);
+}
+
+void MyWidget::DataBits_box_textchange(QString text)
+{
+    serial_port->setDataBits(dataBitsMap[text]);
+}
+
+void MyWidget::FlowControl_box_textchange(QString text)
+{
+    serial_port->setFlowControl(flowControlMap[text]);
+}
+
+void MyWidget::Parity_box_textchange(QString text)
+{
+    serial_port->setParity(parityMap[text]);
+}
+
+void MyWidget::StopBits_box_textchange(QString text)
+{
+    serial_port->setStopBits(stopBitsMap[text]);
+}
+
 
 MyWidget::~MyWidget()
 {
